@@ -4,7 +4,7 @@
         <input 
                 type="text" 
                 :value="name" 
-                @input="updateName"
+                @input="$emit('update-name',$event)"
         />
     </div>
 </template>
@@ -24,10 +24,10 @@ export default {
         }
     },
     methods: {
-        updateName(e){
-            console.log('InputField 내부 ' + e.target.value);
-            this.$emit('update-name', e.target.value )
-        }
+        // updateName(e){
+        //     console.log('InputField 내부 ' + e.target.value);
+        //     this.$emit('update-name', e.target.value )
+        // }
     }
 }
 </script>

@@ -2,7 +2,8 @@
     <div class="aboutGuideLine">
         <h1>This page is {{name}}</h1>
         <form @submit="inputSubmit">
-            <InputField  @update-name="updateName"  />
+            <!-- <InputField  @update-name="updateName"  /> -->
+            <InputField @update-name="name=$event.target.value" />
         </form>
     </div>
 </template>
@@ -24,10 +25,10 @@ export default {
         inputSubmit(e){
             console.log('inputSubmit ' + e);
         },
-        updateName(value){
-            console.log('부모 About emit으로 전달받은 자식값 : ' + value);
-            this.name = value
-        }
+        // updateName(value){
+        //     console.log('부모 About emit으로 전달받은 자식값 : ' + value);
+        //     this.name = value
+        // }
     }
 }
 </script>
