@@ -5,7 +5,7 @@
         <slot name="body" :body="body" ></slot>
         <slot name="footer" :footer="footer" ></slot>
         <slot :defaultVal="defaultVal" ></slot><!--default -->
-        <button @click="updateName" >Click</button>
+        <button @click="$emit('click-event', $event)" >Click</button>
     </div>
 </template>
 <script>
