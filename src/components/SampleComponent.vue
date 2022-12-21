@@ -20,7 +20,8 @@ export default {
     },
     methods: {
         updateName(){
-            this.title = 'updated component name'
+            // this.title = 'updated component name'
+            // 자식 컴포넌트에서 부모로 부터 받은 props 값을 수정하면 안된다.
         }
     }
 }
