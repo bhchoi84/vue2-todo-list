@@ -1,9 +1,11 @@
 <template>
     <div class="aboutGuideLine">
         <h1>This page is {{name}}</h1>
+        
         <form @submit="inputSubmit">
             <!-- <InputField  @update-name="updateName"  /> -->
-            <InputField @update-name="name=$event.target.value" />
+            <!-- <InputField  :name="name" @update-name="name=$event.target.value"   />-->
+            <InputField v-model="name" />
         </form>
     </div>
 </template>

@@ -1,18 +1,23 @@
 <template>
     <div>
         <label for="">Name</label>
+        <!--
         <input 
                 type="text" 
                 :value="name" 
-                @input="$emit('update-name',$event)"
-        />
+               @input="$emit('update-name',$event)"
+        -->
+        <input type="text" 
+                :value="value" 
+                style="border: 1px solid pink"
+                @input="$emit('input',$event.target.value)" />
     </div>
 </template>
 
 <script>
 export default {
     props: {
-        name: {
+        value: {
             type: String,
             default: '',
             required: false

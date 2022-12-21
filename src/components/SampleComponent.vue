@@ -1,6 +1,10 @@
 <template>
     <div class="guideLine">
         <h2>{{title}}</h2>
+        <slot name="header" :header="header" ></slot>
+        <slot name="body" :body="body" ></slot>
+        <slot name="footer" :footer="footer" ></slot>
+        <slot :defaultVal="defaultVal" ></slot><!--default -->
         <button @click="updateName" >Click</button>
     </div>
 </template>
@@ -15,6 +19,10 @@ export default {
     },
     data(){
         return {
+            header: 'slot 자식 컴포넌트가 올려보낸 header props값',
+            body: 'slot 자식 컴포넌트가 올려보낸 body props값',
+            footer: 'slot 자식 컴포넌트가 올려보낸 footer props값',
+            defaultVal: 'slot 자식 컴포넌트가 올려보낸 defaultVal props값'
         
         }
     },
