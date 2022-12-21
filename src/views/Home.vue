@@ -1,7 +1,7 @@
 <template>
   <div class="homeGuideLine">
-    <h1>This is Home page</h1>
-    <SampleComponent />
+    <h1>This page is {{name}}</h1>
+    <SampleComponent :title="name" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@
     },
     data() {
       return {
-
+        name: 'home page!'
       }
     },
     methods: {
@@ -27,6 +27,10 @@
 <style scoped>
   .homeGuideLine {
     border: 1px solid green;
+  }
+
+  h1 {
+    color: green
   }
 </style>
 

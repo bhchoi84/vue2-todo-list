@@ -1,7 +1,7 @@
 <template>
     <div class="aboutGuideLine">
-        <h1>This is About page</h1>    
-        <SampleComponent />
+        <h1>This page is {{name}}</h1>
+        <SampleComponent :title="name" />
     </div>
 </template>
 <script>
@@ -14,7 +14,7 @@ export default {
     },
     data(){
         return {
-
+            name: 'about page!'
         }
     }, 
     methods: {
@@ -25,6 +25,10 @@ export default {
 
 <style scoped>
     .aboutGuideLine {
-        border: 1px solid blue
+    border: 1px solid blue
+    }
+
+    h1 {
+        color: blue
     }
 </style>
