@@ -7,7 +7,7 @@
             <input 
                 type="checkbox" 
                 :checked="todo.checked" 
-                @change="toggleCheck"
+                @change="toggleCheckbox"
             />
         </div>
         <span 
@@ -19,6 +19,7 @@
     </div>
 </template>
 <script>
+
 export default {
     props: {
         todo: {
@@ -32,14 +33,13 @@ export default {
         }
     },
     methods: {
-        toggleCheck(e){
-            this.$emit('toggle-checkbox',{
-                id: this.todo.id,
-                checked: e.target.checked
-            })
+        toggleCheckbox(e){
+            //this.$store.commit('TOGGLE_TODO', { id: this.todo.id, checked: e.target.checked})
+            this.$store.dispatch('toggleTodo', {id: this.todo.id, checked: e.target.checked})
         },
         deleteTodo(){
-            this.$emit('delete-todo', {id: this.todo.id})
+            //this.$store.commit('DELETE_TODO', this.todo.id)
+            this.$store.dispatch('deleteTodo', this.todo.id)
         }
     }
 }
