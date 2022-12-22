@@ -1,11 +1,10 @@
 <template>
     <div id="todo" class="container">
         <h1 class="text-center">Todo App</h1>
-        <CompletedTodo  :todos="todos" />
+        <CompletedTodo />
         <AddTodo @add-todo="addTodo" />
         <hr>
         <TodoList 
-                :todos="todos" 
                 @toggle-checkbox="toggleCheckbox"
                 @delete-todo="deleteTodo"
         />
@@ -24,12 +23,12 @@ export default {
     },
     data(){
         return {
-            todos: [
-                {id: 1, text: 'study vue', checked: false},
-                {id: 2, text: 'study react', checked: false},
-                {id: 3, text: 'study angular', checked: false}
-            ],
             todoText: ''
+        }
+    },
+    computed: {
+        todos(){
+            return this.$store.state.todos
         }
     },
     methods: {

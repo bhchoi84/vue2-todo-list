@@ -15,15 +15,14 @@ export default {
     components: {
         TodoItem
     },
-    props: {
-        todos: {
-            type: Array,
-            required: true
-        }
-    },
     data(){
         return {
       
+        }
+    },
+    computed: {
+        todos(){
+            return this.$store.state.todos
         }
     },
     methods: {
@@ -34,7 +33,6 @@ export default {
             this.$emit('delete-todo', {id})
         }
     }
-    
 }
 </script>
 <style scoped></style>
