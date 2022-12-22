@@ -16,6 +16,7 @@
             :style="todo.checked ? 'text-decoration: line-through' : ''  "
         >{{todo.text}}</span>
         <button class="btn btn-danger btn-sm" @click="deleteTodo">Delete</button>
+        <div>count : {{ completedTodoCount }}</div>
     </div>
 </template>
 <script>
@@ -31,6 +32,12 @@ export default {
         return {
 
         }
+    },
+    computed: {
+        completedTodoCount(){    
+            // 어떤 곳에서도 데이터를 가지고 올수있다.
+            return this.$store.getters.completedTodoCount
+        },
     },
     methods: {
         toggleCheckbox(e){
