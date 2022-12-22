@@ -7,7 +7,7 @@ export default {
         completedTodoCount(){
             // store state 값은 위처럼 메서드로 가져와서 사용
             //return this.$store.state.todos.filter( todo => todo.checked ).length;
-            return this.$store.getters.completedTodoCount
+            return this.$store.getters['todo/completedTodoCount']
         }
     }
 }

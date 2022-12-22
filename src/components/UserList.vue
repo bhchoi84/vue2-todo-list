@@ -20,12 +20,17 @@ export default {
         //     'users'     // store state get
         // ])
 
-        ...mapState({
-            people: 'users'
+        // ...mapState({
+        //     //people: 'users'
+        //     people: state => state.user.users
+        // })
+
+        ...mapState('user', {
+            people: state => state.users
         })
     },
     methods: {
-        ...mapActions(['getUsers'])
+        ...mapActions('user', ['getUsers'])
         // getUsers(){
         //     console.log('2 getUsers ===> store call');
         //     this.$store.dispatch('getUsers')

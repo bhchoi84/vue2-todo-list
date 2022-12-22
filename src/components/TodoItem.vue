@@ -36,17 +36,17 @@ export default {
     computed: {
         completedTodoCount(){    
             // 어떤 곳에서도 데이터를 가지고 올수있다.
-            return this.$store.getters.completedTodoCount
+            return this.$store.getters['todo/completedTodoCount']
         },
     },
     methods: {
         toggleCheckbox(e){
             //this.$store.commit('TOGGLE_TODO', { id: this.todo.id, checked: e.target.checked})
-            this.$store.dispatch('toggleTodo', {id: this.todo.id, checked: e.target.checked})
+            this.$store.dispatch('todo/toggleTodo', {id: this.todo.id, checked: e.target.checked})
         },
         deleteTodo(){
             //this.$store.commit('DELETE_TODO', this.todo.id)
-            this.$store.dispatch('deleteTodo', this.todo.id)
+            this.$store.dispatch('todo/deleteTodo', this.todo.id)
         }
     }
 }
