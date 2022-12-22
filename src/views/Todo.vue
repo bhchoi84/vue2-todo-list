@@ -5,18 +5,21 @@
         <AddTodo />
         <hr>
         <TodoList />
+        <UserList />
     </div>
 </template>
 <script>
 import AddTodo from '@/components/AddTodo.vue'
 import TodoList from '@/components/TodoList.vue'
 import CompletedTodo from '@/components/CompletedTodo.vue'
+import UserList from '@/components/UserList.vue'
 
 export default {
     components: {
         AddTodo,
         TodoList,
-        CompletedTodo
+        CompletedTodo,
+        UserList
     }   
 }
 </script>
