@@ -33,13 +33,13 @@ export default {
     },
     methods: {
         toggleCheck(e){
-            this.$emit('toggle-check',{
+            this.$emit('toggle-checkbox',{
                 id: this.todo.id,
                 checked: e.target.checked
             })
         },
         deleteTodo(){
-            this.$emit('delete-todo', this.todo.id)
+            this.$emit('delete-todo', {id: this.todo.id})
         }
     }
 }
